@@ -1,3 +1,9 @@
+import Dashboard from "@/Components/Dashboard/Dashboard";
+
 export default function Home() {
-  return <div>Log-in</div>;
+  return (
+    <div>
+      <Dashboard />
+    </div>
+  );
 }
