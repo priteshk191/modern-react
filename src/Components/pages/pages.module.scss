@@ -1,0 +1,47 @@
+.tagsAlignment {
+  h2 {
+    color: darkgray;
+    font-weight: 400;
+  }
+
+  .row {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+
+    button {
+      cursor: pointer;
+      font-size: 1.2em;
+      padding: 0.5em 1em;
+      background-color: #fff;
+      text-decoration: none;
+      border: 1px solid #8a99db;
+      border-radius: 0.5em;
+      color: #8a99db;
+      // box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+      &:hover {
+        background-color: #8a99db;
+        color: #fff;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// #C56DA9',
+//   '#8A99DB',
+//   '#6CC9E0',
+//   '#8EBE92',
+//   '#EACE62',
+// '#C060A1',
+//   '#7788D4',
+//   '#2DB1D2',
+//   '#6DAB72',
+//   '#876F12',
