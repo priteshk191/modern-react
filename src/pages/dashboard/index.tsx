@@ -1,13 +1,13 @@
 import React from "react";
-import Layout from "@/layout";
+import BaseLayout from "@/layout/BaseLayout";
 import Dashboard from "@/Components/pages/Dashboard/Dashboard";
 
 export default function index() {
   return (
     <>
-      <Layout>
+      <BaseLayout>
         <Dashboard />
-      </Layout>
+      </BaseLayout>
     </>
   );
 }

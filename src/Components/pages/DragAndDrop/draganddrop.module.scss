@@ -1,0 +1,83 @@
+.DragAndDropAlignment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .header {
+    margin: 25px;
+    color: #6dab72;
+  }
+
+  main {
+    display: flex;
+    gap: 200px;
+    overflow-y: auto;
+    height: 510px;
+    padding: 0 45px;
+  }
+}
+.teamWrapper {
+  h2 {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+}
+
+.characters {
+  list-style: none;
+  padding-left: 0;
+  max-width: 200px;
+
+  li {
+    display: flex;
+    align-items: center;
+    border: solid 2px #6dab72;
+    border-radius: 12px;
+    padding: 0.5em 0.8em 0.5em 0.5em;
+    margin-bottom: 2em;
+    &:hover {
+      background-color: #e4f6e5;
+    }
+
+    .charactersthumb {
+      overflow: hidden;
+      flex-shrink: 0;
+      width: 2em;
+      height: 2em;
+      background-color: #e8e8e8;
+      padding: 0.5em;
+      margin-right: 0.5em;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    p {
+      max-width: none;
+      margin: 0;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+  }
+}
+
+.hovering {
+  background-color: rgba(0, 0, 0, 0.16);
+  border: 2px dashed;
+  position: relative;
+
+  .characters {
+    opacity: 0.3;
+  }
+
+  p.drophere {
+    position: absolute;
+    left: 55px;
+    top: 35px;
+    font-weight: 700;
+  }
+}

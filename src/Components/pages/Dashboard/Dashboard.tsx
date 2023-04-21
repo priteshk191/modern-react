@@ -3,15 +3,14 @@ import styles from "../pages.module.scss";
 import { useRouter } from "next/router";
 
 type DashboardProps = {};
+type CatType = {
+  page: string;
+  url: string;
+};
 
-const CAT_TYPE: string[] = [
-  "Pagination",
-  "Slider",
-  "Form",
-  "Nextjs",
-  "Firebase",
-  "Chart",
-  "Redux",
+const CAT_TYPE: CatType[] = [
+  { page: "Image Cropper", url: "imagecropper" },
+  { page: "Drag And Drop", url: "draganddrop" },
 ];
 
 const Dashboard: React.FC<DashboardProps> = () => {
@@ -32,13 +31,10 @@ const Dashboard: React.FC<DashboardProps> = () => {
     <div className={styles.tagsAlignment}>
       <h2>TAGS</h2>
       <div className={styles.row}>
-        {selectedCat?.map((cat: string, index: number) => {
+        {selectedCat?.map((cat, index) => {
           return (
-            <button
-              key={index}
-              onClick={() => router.push(`/${cat.toLowerCase()}`)}
-            >
-              <b>{cat}</b>
+            <button key={index} onClick={() => router.push(`/${cat?.url}`)}>
+              <b>{cat?.page}</b>
             </button>
           );
         })}

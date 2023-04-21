@@ -1,12 +1,10 @@
 import React from "react";
-import styles from "../layout.module.scss";
+import styles from "../../layout.module.scss";
 
 export default function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <h1>My React</h1>
-      </div>
+      <div className={styles.logo}><h1>My React</h1></div>
       <nav className={styles.nav}>
         <div className={styles.search}>
           <input
