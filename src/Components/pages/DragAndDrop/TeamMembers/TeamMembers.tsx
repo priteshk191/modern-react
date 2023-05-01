@@ -16,13 +16,15 @@ type Props = {
   teamId: string;
   members: TeamMember[];
   onDrop: (data: TeamMember, teamId: string) => void;
+  color: string;
+  bgColor: string;
 };
 
 enum DragDropTypes {
   CARD = "CARD",
 }
 
-function TeamMembers({ teamId, members, onDrop }: Props) {
+function TeamMembers({ teamId, members, onDrop, color, bgColor }: Props) {
   const [isHoveringDropzone, setIsHoveringDropzone] = useState(false);
   const dragCounter = useRef(0);
   const { dragItemData } = useDragAndDropContext();
@@ -62,29 +64,36 @@ function TeamMembers({ teamId, members, onDrop }: Props) {
           hovering: isHoveringDropzone,
         })}
       >
-        <h2>
-          {teamId} ({members.length})
-        </h2>
-        {isHoveringDropzone && <p className={styles.drophere}>Drop here</p>}
-        <ul className={styles.characters}>
-          {members.map((member, index) => {
-            return (
-              <Draggable
-                key={member.id}
-                type={DragDropTypes.CARD}
-                data={member}
-                onDragStart={(e: any) => console.log("onDragStart", e)}
-              >
-                <li key={member.id}>
-                  <div className={styles.charactersthumb}>
-                    {/* <img src={member.thumb} alt={`${member.name} Thumb`} /> */}
-                  </div>
-                  <p>{member.name}</p>
-                </li>
-              </Draggable>
-            );
-          })}
-        </ul>
+        <div className={styles.teamBodyWrapper}>
+          <h2>
+            {teamId} ({members.length})
+          </h2>
+          <div>
+            {isHoveringDropzone && <span className={styles.loader}></span>}
+          </div>
+          <ul className={styles.characters}>
+            {members.map((member, index) => {
+              return (
+                <Draggable
+                  key={member.id}
+                  type={DragDropTypes.CARD}
+                  data={member}
+                  onDragStart={(e: any) => console.log("onDragStart", e)}
+                >
+                  <li
+                    key={member.id}
+                    style={{ color: color, backgroundColor: bgColor }}
+                  >
+                    <div className={styles.charactersthumb}>
+                      {/* <img src={member.thumb} alt={`${member.name} Thumb`} /> */}
+                    </div>
+                    <p>{member.name}</p>
+                  </li>
+                </Draggable>
+              );
+            })}
+          </ul>
+        </div>
       </Droppable>
     </div>
   );

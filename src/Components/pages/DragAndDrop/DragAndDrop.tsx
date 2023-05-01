@@ -3,57 +3,21 @@ import TeamMembers from "./TeamMembers/TeamMembers";
 import styles from "./draganddrop.module.scss";
 
 const teamsData = {
-  "team-1": [
-    {
-      id: "naruto",
-      name: "Naruto",
-      teamId: "team-1",
-    },
-    {
-      id: "kakashi",
-      name: "Kakashi",
-      teamId: "team-1",
-    },
-    {
-      id: "sakura",
-      name: "Sakura",
-      teamId: "team-1",
-    },
-    {
-      id: "hinata",
-      name: "Hinata",
-      teamId: "team-1",
-    },
-    {
-      id: "sasuke",
-      name: "Sasuke",
-      teamId: "team-1",
-    },
+  "Team-1": [
+    { id: "naruto", name: "Naruto", teamId: "Team-1" },
+    { id: "kakashi", name: "Kakashi", teamId: "Team-1" },
+    { id: "sakura", name: "Sakura", teamId: "Team-1" },
+    { id: "hinata", name: "Hinata", teamId: "Team-1" },
+    { id: "sasuke", name: "Sasuke", teamId: "Team-1" },
   ],
-
-  "team-2": [
-    {
-      id: "itachi",
-      name: "Itachi",
-      teamId: "team-2",
-    },
-    {
-      id: "madara",
-      name: "Madara",
-      teamId: "team-2",
-    },
-    {
-      id: "hashirama",
-      name: "Hashirama",
-      teamId: "team-2",
-    },
-    {
-      id: "might",
-      name: "Might Guy",
-      teamId: "team-2",
-    },
+  "Team-2": [
+    { id: "itachi", name: "Itachi", teamId: "Team-2" },
+    { id: "madara", name: "Madara", teamId: "Team-2" },
+    { id: "hashirama", name: "Hashirama", teamId: "Team-2" },
+    { id: "might", name: "Might Guy", teamId: "Team-2" },
   ],
 };
+const style = {};
 function DragAndDrop() {
   const [teams, setTeams] = useState(teamsData);
 
@@ -72,7 +36,7 @@ function DragAndDrop() {
     updatedTeams[newTeamId].push(member);
     setTeams(updatedTeams);
   };
-
+console.log("teams" ,teams)
   return (
     <div className={styles.DragAndDropAlignment}>
       <header className={styles.header}>
@@ -80,14 +44,18 @@ function DragAndDrop() {
       </header>
       <main>
         <TeamMembers
-          teamId="team-1"
-          members={teams["team-1"]}
+          teamId="Team-1"
+          members={teams["Team-1"]}
           onDrop={onDrop}
+          color="#be5b9e"
+          bgColor="#e9c8df"
         />
         <TeamMembers
-          teamId="team-2"
-          members={teams["team-2"]}
+          teamId="Team-2"
+          members={teams["Team-2"]}
           onDrop={onDrop}
+          color="#57c1db"
+          bgColor="#d5eff6"
         />
       </main>
       <p></p>

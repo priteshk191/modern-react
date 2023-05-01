@@ -1,15 +1,21 @@
 .tagsAlignment {
+  padding-bottom: 40px;
+  border-bottom: 1px solid lightgray;
   h2 {
     color: darkgray;
     font-weight: 400;
   }
-
   .row {
     margin-top: 60px;
     display: flex;
     align-items: center;
     gap: 20px;
     background: transparent;
+
+    .activeButton {
+      background-color: #8a99db;
+      color: #fff;
+    }
 
     button {
       cursor: pointer;
@@ -34,7 +40,6 @@
     align-items: flex-start;
   }
 }
-
 // #C56DA9',
 //   '#8A99DB',
 //   '#6CC9E0',

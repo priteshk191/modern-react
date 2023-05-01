@@ -1,7 +1,8 @@
-const { redirect } = require("next/dist/server/api-utils");
-
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: false,
+  fallback: true,
+  target: "server",
   async redirects() {
     return [
       {
@@ -13,4 +14,7 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = {
+  ...nextConfig,
+  trailingSlash: false,
+};

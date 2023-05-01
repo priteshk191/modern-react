@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface DashboardState {
+  status: "idle" | "loading" | "succeeded" | "failed";
+  error: string | null;
+  selectedPage: string;
+}
+
+const initialState: DashboardState = {
   status: "idle",
   error: null,
   selectedPage: "",
@@ -9,10 +15,12 @@ const initialState = {
 const dashboardSlice = createSlice({
   name: "Dashboard",
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder;
+  reducers: {
+    setSelectedPage(state, action) {
+      state.selectedPage = action.payload;
+    },
   },
 });
-export const {} = dashboardSlice.actions;
+
+export const { setSelectedPage } = dashboardSlice.actions;
 export default dashboardSlice.reducer;
