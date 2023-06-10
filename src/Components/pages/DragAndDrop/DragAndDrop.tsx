@@ -40,7 +40,7 @@ console.log("teams" ,teams)
   return (
     <div className={styles.DragAndDropAlignment}>
       <header className={styles.header}>
-        <h1>Drag And Drop</h1>
+        <h2>Drag And Drop</h2>
       </header>
       <main>
         <TeamMembers

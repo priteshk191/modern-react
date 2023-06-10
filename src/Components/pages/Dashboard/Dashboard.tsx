@@ -15,7 +15,7 @@ const CAT_TYPE: CatType[] = [
   { page: "Image Cropper", url: "imagecropper" },
   { page: "Drag And Drop", url: "draganddrop" },
   { page: "Pagination", url: "pagination" },
-  { page: "Color Generator", url: "colorgenerator" },
+  { page: "Gradient Generator", url: "colorgenerator" },
   { page: "CRUD", url: "crud" },
 ];
 
@@ -25,9 +25,6 @@ const Dashboard: React.FC<DashboardProps> = () => {
   const selectedPage = useSelector(
     (state: RootState) => state.dashboard.selectedPage
   );
-
-  const [selectedCat, setSelectedCat] = useState(CAT_TYPE);
-
   const handleButtonClick = (cat: CatType) => {
     dispatch(setSelectedPage(cat.page));
     router.push(`/${cat.url}`);
@@ -37,7 +34,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
     <div className={styles.tagsAlignment}>
       <h2>TAGS</h2>
       <div className={styles.row}>
-        {selectedCat?.map((cat, index) => {
+        {CAT_TYPE?.map((cat, index) => {
           return (
             <button
               key={index}
