@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "../pages.module.scss";
 import { useRouter } from "next/router";
+import { RootState } from "Redux/store";
+import styles from "../pages.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedPage } from "./DashboardSlice";
-import { RootState } from "Redux/store";
 
 type DashboardProps = {};
 type CatType = {
@@ -16,7 +16,7 @@ const CAT_TYPE: CatType[] = [
   { page: "Drag And Drop", url: "draganddrop" },
   { page: "Pagination", url: "pagination" },
   { page: "Gradient Generator", url: "colorgenerator" },
-  { page: "CRUD", url: "crud" },
+  { page: "To-Do List", url: "todo" },
 ];
 
 const Dashboard: React.FC<DashboardProps> = () => {

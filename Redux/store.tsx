@@ -1,5 +1,3 @@
-// store.ts
-
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import thunkMiddleware, { ThunkAction } from "redux-thunk";
 import { Action } from "@reduxjs/toolkit";

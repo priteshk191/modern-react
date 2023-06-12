@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 import cn from "classnames";
+
 import Draggable from "../DragDrop/Draggable";
+import Droppable from "../DragDrop/Droppable";
 import styles from "../draganddrop.module.scss";
 import useDragAndDropContext from "../DragDrop/hooks/useDragAndDropContext";
-import Droppable from "../DragDrop/Droppable";
 
 type TeamMember = {
   id: string;

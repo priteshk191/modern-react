@@ -1,16 +1,15 @@
 import React, { useCallback, useState } from "react";
 import { useRef } from "react";
 import download from "downloadjs";
+import { toJpeg } from "html-to-image";
 import "react-image-crop/dist/ReactCrop.css";
 import styles from "./imageCropper.module.scss";
 import { MdDelete, MdCrop } from "react-icons/Md";
 import { canvasPreview } from "./Crop/canvasPreview";
 import { useDebounceEffect } from "./Crop/useDebounceEffect";
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 import ReactCrop, {
   centerCrop,
   makeAspectCrop,
-  Crop,
   PixelCrop,
 } from "react-image-crop";
 
@@ -41,9 +40,7 @@ function centerAspectCrop(
 
 const ImageCropper: React.FC = () => {
   const imgRef = useRef<any>(null);
-  const blobUrlRef = useRef<any>("");
   const previewCanvasRef = useRef<any>();
-  const hiddenAnchorRef = useRef<any>(null);
 
   const [scale, setScale] = useState(1);
   const [crop, setCrop] = useState<any>();
@@ -146,6 +143,12 @@ const ImageCropper: React.FC = () => {
     setShowCrop(true);
   };
 
+  const handleCancel = () => {
+    setSelectedImageIndex(0);
+    setShowCrop(false);
+    setCompletedCrop(undefined);
+  };
+
   return (
     <>
       <div className={styles.imageUploadWrapper}>
@@ -232,10 +235,7 @@ const ImageCropper: React.FC = () => {
                       >
                         Download Crop
                       </button>
-                      <button
-                        className={styles.button}
-                        onClick={() => setShowCrop(false)}
-                      >
+                      <button className={styles.button} onClick={handleCancel}>
                         Cancel
                       </button>
                     </div>

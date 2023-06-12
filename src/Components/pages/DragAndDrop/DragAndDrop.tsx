@@ -17,7 +17,7 @@ const teamsData = {
     { id: "might", name: "Might Guy", teamId: "Team-2" },
   ],
 };
-const style = {};
+
 function DragAndDrop() {
   const [teams, setTeams] = useState(teamsData);
 
@@ -36,7 +36,7 @@ function DragAndDrop() {
     updatedTeams[newTeamId].push(member);
     setTeams(updatedTeams);
   };
-console.log("teams" ,teams)
+
   return (
     <div className={styles.DragAndDropAlignment}>
       <header className={styles.header}>
