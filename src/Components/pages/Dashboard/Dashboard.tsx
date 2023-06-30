@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { RootState } from "Redux/store";
 import styles from "../pages.module.scss";
+import buttonsData from "../../mock/buttons.json";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedPage } from "./DashboardSlice";
 
@@ -10,14 +11,6 @@ type CatType = {
   page: string;
   url: string;
 };
-
-const CAT_TYPE: CatType[] = [
-  { page: "Image Cropper", url: "imagecropper" },
-  { page: "Drag And Drop", url: "draganddrop" },
-  { page: "Pagination", url: "pagination" },
-  { page: "Gradient Generator", url: "colorgenerator" },
-  { page: "To-Do List", url: "todo" },
-];
 
 const Dashboard: React.FC<DashboardProps> = () => {
   const router = useRouter();
@@ -34,7 +27,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
     <div className={styles.tagsAlignment}>
       <h2>TAGS</h2>
       <div className={styles.row}>
-        {CAT_TYPE?.map((cat, index) => {
+        {buttonsData?.map((cat, index) => {
           return (
             <button
               key={index}

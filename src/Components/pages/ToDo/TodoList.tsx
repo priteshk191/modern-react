@@ -116,62 +116,64 @@ const TodoList: React.FC = () => {
           Completed
         </button>
       </div>
-      {filteredTasks.length > 0 ? (
-        <ul className={styles.taskList}>
-          {filteredTasks.map((task) => (
-            <li
-              key={task.id}
-              className={task.completed ? styles.completed : ""}
-            >
-              {editTaskId === task.id ? (
-                <>
-                  <input
-                    type="text"
-                    value={editTaskContent}
-                    onChange={(e) => setEditTaskContent(e.target.value)}
-                    className={styles.editInput}
-                  />
-                  <button
-                    onClick={handleSaveEditTask}
-                    className={styles.saveButton}
-                  >
-                    Save
-                  </button>
-                  <button
-                    onClick={handleCancelEditTask}
-                    className={styles.cancelButton}
-                  >
-                    Cancel
-                  </button>
-                </>
-              ) : (
-                <>
-                  <input
-                    type="checkbox"
-                    checked={task.completed}
-                    onChange={() => handleTaskCompletion(task.id)}
-                  />
-                  <span>{task.content}</span>
-                  <button
-                    onClick={() => handleEditTask(task.id)}
-                    className={styles.editButton}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDeleteTask(task.id)}
-                    className={styles.deleteButton}
-                  >
-                    Delete
-                  </button>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No data found.</p>
-      )}
+      <div style={{ marginTop: "30px" }}>
+        {filteredTasks.length > 0 ? (
+          <ul className={styles.taskList}>
+            {filteredTasks.map((task) => (
+              <li
+                key={task.id}
+                className={task.completed ? styles.completed : ""}
+              >
+                {editTaskId === task.id ? (
+                  <>
+                    <input
+                      type="text"
+                      value={editTaskContent}
+                      onChange={(e) => setEditTaskContent(e.target.value)}
+                      className={styles.editInput}
+                    />
+                    <button
+                      onClick={handleSaveEditTask}
+                      className={styles.saveButton}
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={handleCancelEditTask}
+                      className={styles.cancelButton}
+                    >
+                      Cancel
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <input
+                      type="checkbox"
+                      checked={task.completed}
+                      onChange={() => handleTaskCompletion(task.id)}
+                    />
+                    <span>{task.content}</span>
+                    <button
+                      onClick={() => handleEditTask(task.id)}
+                      className={styles.editButton}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => handleDeleteTask(task.id)}
+                      className={styles.deleteButton}
+                    >
+                      Delete
+                    </button>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No data found.</p>
+        )}
+      </div>
     </div>
   );
 };

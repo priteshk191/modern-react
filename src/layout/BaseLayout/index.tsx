@@ -6,7 +6,7 @@ import Dashboard from "@/Components/pages/Dashboard/Dashboard";
 function BaseLayout({ children }: any) {
   return (
     <div className={styles.container}>
-      {/* <Header /> */}
+      <Header />
       {children?.type?.name !== "Dashboard" && <Dashboard />}
       <div>{children}</div>
     </div>
