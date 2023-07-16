@@ -7,9 +7,7 @@ export default function index() {
   return (
     <>
       <BaseLayout>
-        <PageLayout>
-          <Dashboard />
-        </PageLayout>
+        <PageLayout>{/* <Dashboard /> */}</PageLayout>
       </BaseLayout>
     </>
   );

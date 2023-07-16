@@ -49,7 +49,7 @@ const ImageCropper: React.FC = () => {
   const [showCrop, setShowCrop] = useState(false);
   const [images, setImages] = useState<Image[]>([]);
   const [imageforCrop, setImageForCrop] = useState<Image[]>([]);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<any>(0);
   const [completedCrop, setCompletedCrop] = useState<PixelCrop>();
   const [aspect, setAspect] = useState<number | undefined>(16 / 9);
 
@@ -139,7 +139,8 @@ const ImageCropper: React.FC = () => {
     reader.addEventListener("load", () =>
       setImgSrc(reader.result?.toString() || "")
     );
-    reader?.readAsDataURL(imageforCrop[selectedImageIndex]);
+    const img: any = imageforCrop[selectedImageIndex];
+    reader?.readAsDataURL(img);
     setShowCrop(true);
   };
 
