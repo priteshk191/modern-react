@@ -54,7 +54,7 @@ export default function Header() {
             type="text"
             name="text"
             className="input"
-            placeholder="kuch to search karle"
+            placeholder="Search your tool"
             value={searchValue}
             onChange={handleSearchChange}
             ref={searchRef}
