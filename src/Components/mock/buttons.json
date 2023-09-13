@@ -1,5 +1,6 @@
 [
   { "page": "Image Cropper", "url": "imagecropper" },
+  { "page": "Image Recognition", "url": "imagerecognition" },
   { "page": "Drag And Drop", "url": "draganddrop" },
   { "page": "Pagination", "url": "pagination" },
   { "page": "Gradient Generator", "url": "colorgenerator" },
