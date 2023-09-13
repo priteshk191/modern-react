@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import { RootState } from "Redux/store";
 import styles from "../pages.module.scss";

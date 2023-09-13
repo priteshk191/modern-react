@@ -1,14 +1,14 @@
 import React from "react";
 import BaseLayout from "@/layout/BaseLayout";
 import PageLayout from "@/layout/PageLayout/PageLayout";
-import ColorGenerator from "@/Components/pages/ColorGenerator/ColorGenerator";
+import Modal from "@/Components/pages/3DModel/3DModal";
 
 export default function Index() {
   return (
     <>
       <BaseLayout>
         <PageLayout>
-          <ColorGenerator />
+          <Modal />
         </PageLayout>
       </BaseLayout>
     </>
