@@ -26,8 +26,7 @@ export const ModelViewer: React.FC = () => {
   return (
     <div>
       <model-viewer
-        src="./29w4o3npfiow-m4a1-s.rar"
-        // src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
         shadow-intensity="1"
         camera-controls
         touch-action="pan-y"
